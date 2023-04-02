@@ -46,6 +46,7 @@ async function fetchDoc(){
         console.log(error);
     }
 }
+//chl ja be
 
 function displDoc(ans){
     console.log(ans);
