@@ -21,6 +21,8 @@ async function slotsdata(){
    
     
 }
+
+
 function displaySlot(result){
     //console.log(result)
     result.map((item)=>{
@@ -102,7 +104,7 @@ async function  slotfetch(obj){
         method: 'POST',
         headers: {
             'content-type':'application/json',
-            'authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsIm5hbWUiOiJhZG1pbjEiLCJwaG9uZSI6IjEyMzQ1Njc4OTAiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQwNyRxY2lQS3FWZFFRRFd4Lno0VGlKb2hlejc5eXpVZ3hYejRnV0tCU3VJVHo1Y3lvVDNlS292cSIsInJvbGUiOiJhZG1pbiIsImRhdGVfb2ZfYmlydGgiOiIyMDAzLTA4LTEyVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE2ODAyNzI2MDR9.JZS6Zx-uqJzMPbkcD_CMzSsBoMK8KKMFdG95fx8EvN8'
+            'authorization':localStorage.getItem("token")
         },
         body: JSON.stringify(obj)
     })
@@ -131,7 +133,7 @@ async function getCost(url){
         let cost = await fetch(url,{
             method:'GET',
             headers:{
-                authorization:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsIm5hbWUiOiJhZG1pbjEiLCJwaG9uZSI6IjEyMzQ1Njc4OTAiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQwNyRxY2lQS3FWZFFRRFd4Lno0VGlKb2hlejc5eXpVZ3hYejRnV0tCU3VJVHo1Y3lvVDNlS292cSIsInJvbGUiOiJhZG1pbiIsImRhdGVfb2ZfYmlydGgiOiIyMDAzLTA4LTEyVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE2ODAyNzI2MDR9.JZS6Zx-uqJzMPbkcD_CMzSsBoMK8KKMFdG95fx8EvN8'
+                authorization:localStorage.getItem("token")
             }
         })
 
