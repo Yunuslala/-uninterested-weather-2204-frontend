@@ -15,7 +15,7 @@ const payobj=
   userId: 1,
   slotId,
   amount: total,
-  method: "CARD"
+  method: "card"
 }
 
 let select = document.getElementById("change")
@@ -113,14 +113,18 @@ checkoutButton.addEventListener("click", async function () {
         quantity:1,
         name:cat })
   });
- let ans= await resul.json()
- let striperes=stripe.redirectToCheckout({ sessionId: ans.id })
+ let ans= await resul.json();
+ console.log(ans);
+ if(ans){
+  paymentsavedb(payobj);
+  let striperes=stripe.redirectToCheckout({ sessionId: ans.id })
  striperes.then((res)=>{
   console.log(res)
-  paymentsavedb(payobj);
+
  }).catch((err)=>{
 console.log("err",err)
  })
+ }
 });
 
 
@@ -135,6 +139,7 @@ async function paymentsavedb(payobj){
       },
       body:JSON.stringify(payobj)
     });
+    console.log(await respo.json());
     if(respo.ok){
       let result=await respo.json();
       localStorage.setItem("paymentstaus","payment stored")

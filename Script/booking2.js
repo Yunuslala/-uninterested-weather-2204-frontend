@@ -21,8 +21,6 @@ async function slotsdata(){
    
     
 }
-
-
 function displaySlot(result){
     //console.log(result)
     result.map((item)=>{
@@ -80,11 +78,11 @@ backbtn.addEventListener("click",backFunc)
 function backFunc(){
 window.location.href="booking1.html"
 }
-let nextbtn = document.getElementById("next")
-nextbtn.addEventListener("click",nextFunc)
-function nextFunc(){
-window.location.href="payment.html"
-}
+// let nextbtn = document.getElementById("next")
+// nextbtn.addEventListener("click",nextFunc)
+// function nextFunc(){
+// window.location.href="payment.html"
+// }
 
 
 // document.getElementById("slottime").addEventListener("change",(e)=>{
@@ -104,11 +102,11 @@ async function  slotfetch(obj){
         method: 'POST',
         headers: {
             'content-type':'application/json',
-            'authorization':localStorage.getItem("token")
+            'authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsIm5hbWUiOiJhZG1pbjEiLCJwaG9uZSI6IjEyMzQ1Njc4OTAiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQwNyRxY2lQS3FWZFFRRFd4Lno0VGlKb2hlejc5eXpVZ3hYejRnV0tCU3VJVHo1Y3lvVDNlS292cSIsInJvbGUiOiJhZG1pbiIsImRhdGVfb2ZfYmlydGgiOiIyMDAzLTA4LTEyVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE2ODAyNzI2MDR9.JZS6Zx-uqJzMPbkcD_CMzSsBoMK8KKMFdG95fx8EvN8'
         },
         body: JSON.stringify(obj)
     })
-    console.log(res);
+    // console.log(await res.json());
     if(res.status == 200){
         res = await res.json();
         console.log(res);
@@ -118,7 +116,7 @@ async function  slotfetch(obj){
         window.location.href = "./payment.html"
     }
     else{
-        console.log(res)
+        console.log(await res.json());
         alert(res.msg);
         
     }
@@ -133,7 +131,7 @@ async function getCost(url){
         let cost = await fetch(url,{
             method:'GET',
             headers:{
-                authorization:localStorage.getItem("token")
+                authorization:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsIm5hbWUiOiJhZG1pbjEiLCJwaG9uZSI6IjEyMzQ1Njc4OTAiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQwNyRxY2lQS3FWZFFRRFd4Lno0VGlKb2hlejc5eXpVZ3hYejRnV0tCU3VJVHo1Y3lvVDNlS292cSIsInJvbGUiOiJhZG1pbiIsImRhdGVfb2ZfYmlydGgiOiIyMDAzLTA4LTEyVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE2ODAyNzI2MDR9.JZS6Zx-uqJzMPbkcD_CMzSsBoMK8KKMFdG95fx8EvN8'
             }
         })
 

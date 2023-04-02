@@ -23,8 +23,8 @@ function backFunc(){
     window.location.href="booking.html"
 }
 
-const token=JSON.parse(localStorage.getItem("token"))
-const url="https://tooth-tracker.cyclic.app/"
+const token=localStorage.getItem("token")
+const url="http://tooth-tracker.cyclic.app/"
 fetchDoc()
 async function fetchDoc(){
     try {
