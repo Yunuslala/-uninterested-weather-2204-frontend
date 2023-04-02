@@ -1,0 +1,158 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar{
+    background-color: #0a2540;
+    height: 100px;
+    color: white;
+    
+    
+}
+
+#navbar > div{
+    display: flex;
+    
+    margin: auto;
+    
+    width: 60%;
+    height: 100px;
+
+}
+#navbar a{
+    text-decoration: none;
+    color: #7387db;
+}
+
+#img{
+    width: 20%;
+    
+    display: grid;
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+}
+
+#img img{
+    width: 40%;
+    border-radius: 50%;
+    margin-left: 50%;
+    border: 1px solid yellow ;
+    
+}
+
+#condition{
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+hr{
+    width: 60%;
+    margin: auto;
+}
+
+
+#mid{
+    width: 60%;
+    margin: auto;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#doctors{
+    width:60%;
+margin: auto;
+display: grid;
+grid-template-columns: repeat(2,1fr);
+gap: 20px;
+margin-bottom: 40px;
+
+}
+
+#doctors button{
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: #007bff;
+    background-color: white;
+    border: 0.3px solid rgb(78, 75, 75);
+    
+
+} 
+
+#doctors button:hover{
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+}
+
+#toggle{
+    width:60%;
+    margin: auto;
+}
+
+#toggle button{
+    width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: 0.3px solid rgb(78, 75, 75);
+}
+#toggle button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    #navbar > div{
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+    }
+
+    #mid{
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    #img{
+        margin: auto;
+        display: grid;
+        justify-content: center;
+        padding-right: 10%;
+    }
+    #w{
+        margin: auto;
+    }
+
+    #w p{
+        display: none;
+    }
+
+    #doctors{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    #toggle{
+        width: 50%;
+    }
+
+
+}    
