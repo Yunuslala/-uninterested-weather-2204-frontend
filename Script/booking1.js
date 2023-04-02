@@ -29,11 +29,11 @@ fetchDoc()
 async function fetchDoc(){
     try {
         let res=await fetch(`${url}/doctors`,{
-            // Method:"GET",
-            // headers:{
-            //     "Content-Type":"application/json",
-            //     "authorization":token
-            // }
+            Method:"GET",
+            headers:{
+                "Content-Type":"application/json",
+                "authorization":token
+            }
         });
         // let vari = await res.json()
         // console.log(vari)
